@@ -1,0 +1,66 @@
+package hillCiper;
+
+public class HillCiper {
+
+	public int keyMatrix[][];
+	public int i, j, k;
+	public String key;
+	public int messageVector[][];
+	
+	public HillCiper(int [][]keyMatrix, int i, int j, int k, String key, int[][]messageVector) {
+		setKeyMatrix(keyMatrix);
+		setI(i);
+		setJ(j);
+		setK(k);
+		setKey(key);
+		setMessageVector(messageVector);
+	}
+
+	private void setMessageVector(int[][] messageVector) {
+		this.messageVector = messageVector;
+		
+	}
+
+	public void setKeyMatrix(int[][] keyMatrix) {
+		this.keyMatrix = keyMatrix;
+	}
+	
+	public void setI(int i) {
+		this.i = i;
+	}
+
+	public void setJ(int j) {
+		this.j = j;
+	}
+
+	public void setK(int k) {
+		this.k = k;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+	
+
+	public int getI() {
+		return i;
+	}
+
+	public int getJ() {
+		return j;
+	}
+
+	public int getK() {
+		return k;
+	}
+
+	public String getKey() {
+		return key;
+	}
+
+	public int getKeyMatrix() {
+		return keyMatrix[i][j] = (key.charAt(k)) % 65;
+	}
+	
+	
+}
