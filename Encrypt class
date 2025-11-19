@@ -1,0 +1,26 @@
+package hillCiper;
+
+public class Encrypt extends HillCiper{
+
+	public Encrypt(int[][] keyMatrix, int i, int j, int k, String key, int[][] messageVector) {
+		super(keyMatrix, i, j, k, key, messageVector);
+		generateCiperMatrix(key);
+	}
+
+	@SuppressWarnings("null")
+	private void generateCiperMatrix(String key) {
+		int x;
+		int[][] ciperMatrix = null;
+		for(i = 0; i < 3; i++) {
+			for(j = 0; j < 1; j++) {
+				ciperMatrix[i][j] = 0;
+			}
+			for(x = 0; x < 3; x++) {
+				ciperMatrix[i][j] += super.keyMatrix[i][x] * messageVector[x][j];
+			}
+			
+			ciperMatrix[i][j] = ciperMatrix[i][j] % 26;
+		}
+	}
+
+}
