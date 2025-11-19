@@ -1,0 +1,20 @@
+package hillCiper;
+
+public class GetKeyMatrix extends HillCiper {
+	
+	public GetKeyMatrix(int[][] keyMatrix, int i, int j, int k, String key, int[][] messageVector) {
+		super(keyMatrix, i, j, k, key, messageVector);
+		generateMatrix(key);
+	}
+	
+	private void generateMatrix(String key) {
+		int k = 0;
+		for(int i = 0;i < 3; i++) {
+		for(int j = 0; j < 3; j++) {
+			super.keyMatrix[i][j] = (key.charAt(k)) % 65;
+			k++;
+		}
+	}
+
+}
+}
